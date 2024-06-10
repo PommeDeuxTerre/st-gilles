@@ -88,7 +88,6 @@
     font-weight: normal;
 }
 
-
 /*** Navbar ***/
 .navbar.sticky-top {
     top: -100px;
@@ -156,9 +155,31 @@
     
 }
 
-.logo{
-    width: 200px;
-}
+     /* logo */
+   
+    #triangle_3 {
+       transition: all 1s ease;
+    }
+    #triangle_2 {
+       transition: all 1s ease;
+       transition-delay: 1000ms;
+    }
+    #triangle_1 {
+       transition: all 1s ease;
+       transition-delay: 2000ms;
+    }
+    .triangle {
+       transform: translateX(-100%)
+    }
+      a.text-decoration-none {
+        text-decoration: none;
+        }
+        
+        a.text-decoration-none:hover .team-item {
+            box-shadow: 0 0 30px rgba(12, 12, 12, 0.1);
+        }
+        
+  
 /*** Header ***/
 
 .carousel-caption {
@@ -782,4 +803,90 @@
             opacity: 0;
         }
     }
+
+/*LOGO NAVBAR */
+
+      svg.intro {
+        max-width: 200px;
+        position: absolute;
+        top: 45%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        
+        .text { 
+          display: none;
+        }
+        &.go {
+          .text {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+          }
+          .text-stroke {
+            fill: none;
+            stroke: var(--secondary);
+            stroke-width: 2.8px;
+            stroke-dashoffset: -900;
+            stroke-dasharray: 900;
+            stroke-linecap: butt;
+            stroke-linejoin: round;
+            animation: dash 2.5s ease-in-out forwards;
+          }
+          .text-stroke:nth-child(2) {
+            animation-delay: .3s;
+          }
+          .text-stroke:nth-child(3) {
+            animation-delay: .9s;
+          }
+          .text-stroke-2 {
+            stroke: var(--dark);
+            animation-delay: 1.2s;
+          }
+          .text-stroke:nth-child(5) {
+            animation-delay: 1.5s;
+          }
+          .text-stroke:nth-child(6) {
+            animation-delay: 1.8s;
+          }
+        }
+      }
+      
+      @keyframes dash {
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      .reload {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        background: #000000;
+        border: none;
+        border-radius: 20px;
+        outline: none!important;
+        font-size: 11px;
+        line-height: 1.5;
+        padding: 8px 12px;
+        text-transform: uppercase;
+        z-index: 10;
+        cursor: pointer;
+        box-shadow: 0 6px 7px #350e4c;
+        transition: all .1s cubic-bezier(.67, .13, .1, .81);
+        &:hover {
+          box-shadow: 0 4px 4px #350e4c;
+          transform: translateY(1px);
+        }
+        &:active {
+          box-shadow: 0 1px 2px #244B94;
+          transform: translateY(2px);
+        }
+        svg {
+          vertical-align: middle;
+          position: relative;
+          top: -2px;
+        }
+      }
    
